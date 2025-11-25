@@ -351,22 +351,6 @@
 
                     <button type="submit" class="submit-btn">Login</button>
 
-                    <div class="form-footer">
-                        <a href="#">Forgot your password?</a>
-                    </div>
-
-                    <div class="divider">
-                        <span>or</span>
-                    </div>
-
-                    <div class="social-login">
-                        <button type="button" class="social-btn" onclick="socialLogin('google')">
-                            <span>📧</span> Google
-                        </button>
-                        <button type="button" class="social-btn" onclick="socialLogin('facebook')">
-                            <span>📘</span> Facebook
-                        </button>
-                    </div>
                 </form>
 
                 <!-- Register Form -->
@@ -398,18 +382,6 @@
                                 href="#">Privacy Policy</a></small>
                     </div>
 
-                    <div class="divider">
-                        <span>or</span>
-                    </div>
-
-                    <div class="social-login">
-                        <button type="button" class="social-btn" onclick="socialLogin('google')">
-                            <span>📧</span> Google
-                        </button>
-                        <button type="button" class="social-btn" onclick="socialLogin('facebook')">
-                            <span>📘</span> Facebook
-                        </button>
-                    </div>
                 </form>
             </div>
         </div>
@@ -793,25 +765,7 @@
             }, 1500);
         });
 
-        // Social login functionality
-        function socialLogin(provider) {
-            showMessage(`Redirecting to ${provider} login...`, 'success');
-
-            // Simulate social login
-            setTimeout(() => {
-                const mockUser = {
-                    id: Date.now(),
-                    name: `${provider} User`,
-                    email: `user@${provider}.com`,
-                    provider: provider,
-                    registrationDate: new Date().toISOString()
-                };
-
-                StorageManager.saveSession(mockUser);
-                showMessage(`${provider} login successful!`, 'success');
-                updateHeaderForLoggedInUser(mockUser);
-            }, 1500);
-        }
+        
 
         // Show login modal (for header button)
         function showLoginModal() {
